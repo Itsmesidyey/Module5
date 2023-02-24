@@ -47,13 +47,13 @@ namespace Employee_Records
                 SqlCommand cmd = new SqlCommand("exec Insert_Info '" + emp_name + "','" + emp_age + "','" + emp_salary + "','" + FDateTime + "','" + phone + "'", con);
                 con.Open();
                 dr = cmd.ExecuteReader();
-                MessageBox.Show("Succesfully saved!", "Success");
+                MessageBox.Show("Your data has been succesfully saved!", "Success");
                 con.Close();
                 GetEmpList();
             }
             catch
             {
-                MessageBox.Show("Invalid Input", "Error");
+                MessageBox.Show("Invalid! Please try to input again", "Error");
             }
         }
 
@@ -73,13 +73,13 @@ namespace Employee_Records
                 SqlCommand cmd = new SqlCommand("exec Update_Info '" + id + "','" + emp_name + "','" + emp_age + "','" + emp_salary + "','" + FDateTime + "','" + phone + "'", con);
                 con.Open();
                 dr = cmd.ExecuteReader();
-                MessageBox.Show("Succesfully updated!", "Success");
+                MessageBox.Show("Your data has been succesfully saved!", "Success");
                 con.Close();
                 GetEmpList();
             }
             catch
             {
-                MessageBox.Show("Invalid Input", "Error");
+                MessageBox.Show("Invalid! Please try to input again", "Error");
             }
         }
 
@@ -95,13 +95,13 @@ namespace Employee_Records
                 SqlCommand cmd = new SqlCommand("exec Delete_Info'" + id + "'", con);
                 con.Open();
                 dr = cmd.ExecuteReader();
-                MessageBox.Show("Succesfully deleted!", "Success");
+                MessageBox.Show("Your data has been deleted successfully!", "Success");
                 con.Close();
                 GetEmpList();
             }
             catch
             {
-                MessageBox.Show("Invalid Input", "Error");
+                MessageBox.Show("Invalid! Please try to input again", "Error");
             }
         }
 
