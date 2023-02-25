@@ -19,7 +19,7 @@ namespace Employee_Records
             InitializeComponent();
         }
 
-        // Show/Refresh Database
+        // Show new set of data
         void GetEmpList()
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-48HNV6S\\SQLEXPRESS01;Initial Catalog=Employee-Record;Integrated Security=True");
@@ -31,7 +31,7 @@ namespace Employee_Records
             DataGrid1.ItemsSource = (IEnumerable)dt.DefaultView;
         }
 
-        // Add Employee Info
+        // This section will add the Employee information in the records
         private void add_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-48HNV6S\\SQLEXPRESS01;Initial Catalog=Employee-Record;Integrated Security=True");
@@ -57,7 +57,7 @@ namespace Employee_Records
             }
         }
 
-        // Update Employee Info
+        // This section will update the Employee information in the records
         private void upd_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -83,7 +83,7 @@ namespace Employee_Records
             }
         }
 
-        // Delete Employee Info
+        // This section will delete the Employee information in the records
         private void delete_click(object sender, RoutedEventArgs e)
         {
             try
@@ -105,7 +105,7 @@ namespace Employee_Records
             }
         }
 
-        // Upon opening form
+        // Startup windows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             GetEmpList();
