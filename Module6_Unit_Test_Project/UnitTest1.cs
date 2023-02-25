@@ -1,8 +1,9 @@
 ﻿/*
  * Module 6: Assessment
- * 
- *
+ * Casinsinan, Cj C.
+ * BSCS 3-1N
  */
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data;
 using System.Data.SqlClient;
@@ -16,7 +17,7 @@ namespace Module6_Unit_Test
         [TestInitialize]
         public void TestSetup()
         {
-            // Create a test database and populate it with sample data
+            // Establish a test database and then insert some sample records into it.
             string connectionString = "Data Source=DESKTOP-48HNV6S\\SQLEXPRESS01;Initial Catalog=Employee-Record;Integrated Security=True";
             connection = new SqlConnection(connectionString);
             connection.Open();
@@ -31,7 +32,7 @@ namespace Module6_Unit_Test
         [TestMethod]
         public void Test2UpdateEmployee()
         {
-            SqlCommand command = new SqlCommand("exec Update_Info 3, 'Jane Smith', 30, 50000.00, '2022 - 02 - 25', '1234567890'", connection);
+            SqlCommand command = new SqlCommand("exec Update_Info 4, 'Jane Smith', 30, 50000.00, '2022 - 02 - 25', '1234567890'", connection);
             int result = command.ExecuteNonQuery();
             Assert.AreEqual(1, result);
         }
@@ -46,7 +47,7 @@ namespace Module6_Unit_Test
         [TestMethod]
         public void Test4DeleteEmployee()
         {
-            SqlCommand command = new SqlCommand("exec Delete_Info 3",connection);
+            SqlCommand command = new SqlCommand("exec Delete_Info 4",connection);
             int result = command.ExecuteNonQuery();
             Assert.AreEqual(1, result);
         }
